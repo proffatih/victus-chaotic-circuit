@@ -1,0 +1,62 @@
+{
+  "system": "fractional Chen",
+  "q": 0.9,
+  "key_bits": 256,
+  "key_space": "2^256 (key) x IEEE-754 IC precision ~ >2^256",
+  "images": {
+    "camera": {
+      "size": [
+        256,
+        256
+      ],
+      "entropy_plain": 7.1161,
+      "entropy_cipher": 7.9973,
+      "corr_plain": {
+        "horizontal": 0.9738,
+        "vertical": 0.985,
+        "diagonal": 0.9656
+      },
+      "corr_cipher": {
+        "horizontal": 0.00799,
+        "vertical": -0.01575,
+        "diagonal": -0.0143
+      },
+      "NPCR_percent": 99.5972,
+      "UACI_percent": 33.2112,
+      "key_sensitivity_NPCR_percent": 99.6307,
+      "key_sensitivity_UACI_percent": 33.3964,
+      "wrong_key_recovery_correlation": 0.00653,
+      "lossless_decryption": true,
+      "encrypt_time_s": 14.0462,
+      "decrypt_time_s": 13.6562,
+      "throughput_Mbps": 0.0373
+    },
+    "coins": {
+      "size": [
+        256,
+        256
+      ],
+      "entropy_plain": 7.4805,
+      "entropy_cipher": 7.997,
+      "corr_plain": {
+        "horizontal": 0.9412,
+        "vertical": 0.946,
+        "diagonal": 0.9087
+      },
+      "corr_cipher": {
+        "horizontal": -0.02179,
+        "vertical": 0.01132,
+        "diagonal": 0.00485
+      },
+      "NPCR_percent": 99.6017,
+      "UACI_percent": 33.4828,
+      "key_sensitivity_NPCR_percent": 99.5895,
+      "key_sensitivity_UACI_percent": 33.5635,
+      "wrong_key_recovery_correlation": 0.00394,
+      "lossless_decryption": true,
+      "encrypt_time_s": 13.198,
+      "decrypt_time_s": 13.3014,
+      "throughput_Mbps": 0.0397
+    }
+  }
+}

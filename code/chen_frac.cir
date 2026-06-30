@@ -1,0 +1,63 @@
+* Fractional-order Chen chaotic oscillator - analog realisation
+* Foster-I fractional-order capacitor, order q=0.90
+* X,Y,Z are scaled state voltages (state = SX*V). Time scale TS=0.001 s
+.param SX=5 TS=0.001
+
+.subckt FOC a b
+Rs a n0 0.001
+Rb0 n0 n1 54702.5
+Cb0 n0 n1 5.80514e-07
+Rb1 n1 n2 175.578
+Cb1 n1 n2 8.07885e-06
+Rb2 n2 n3 231.707
+Cb2 n2 n3 2.1721e-06
+Rb3 n3 n4 5.2046
+Cb3 n3 n4 3.43107e-05
+Rb4 n4 n5 28.7153
+Cb4 n4 n5 2.20651e-06
+Rb5 n5 n6 2.6137
+Cb5 n5 n6 8.60116e-06
+Rb6 n6 b 5.453
+Cb6 n6 b 1.4628e-06
+.ends
+
+* unity inverters
+Einvx nVX 0 0 VX 1.0
+Einvy nVY 0 0 VY 1.0
+Einvz nVZ 0 0 VZ 1.0
+
+* analog multipliers (scaled): VXZ = SX*VX*VZ ; VXY = SX*VX*VY
+Bxz VXZ 0 V = SX*V(VX)*V(VZ)
+Bxy VXY 0 V = SX*V(VX)*V(VY)
+
+Einvxy nVXY 0 0 VXY 1.0
+
+* X fractional integrator
+RXy nVY vgX 57.0075
+RXx VX vgX 57.0075
+XfocX vgX VX FOC
+EX VX 0 0 vgX 1e6
+
+* Y fractional integrator
+RYx nVX vgY 285.037
+RYxz VXZ vgY 1995.26
+RYy nVY vgY 71.2594
+XfocY vgY VY FOC
+EY VY 0 0 vgY 1e6
+
+* Z fractional integrator
+RZxy nVXY vgZ 1995.26
+RZz VZ vgZ 665.087
+XfocZ vgZ VZ FOC
+EZ VZ 0 0 vgZ 1e6
+
+
+.ic V(VX)=-1.8000 V(VY)=-1.0000 V(VZ)=2.8000
+
+.tran 2u 0.12 0 2u uic
+.control
+run
+set wr_singlescale
+wrdata ../results/ngspice_chen.csv v(VX) v(VY) v(VZ)
+.endc
+.end

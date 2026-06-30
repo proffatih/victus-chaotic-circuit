@@ -1,0 +1,71 @@
+{
+  "system": "fractional Chen",
+  "params": {
+    "a": 35.0,
+    "b": 3.0,
+    "c": 28.0
+  },
+  "q": 0.95,
+  "equilibria": [
+    {
+      "point": [
+        -7.937254,
+        -7.937254,
+        21.0
+      ],
+      "eigenvalues_real": [
+        -18.42796,
+        4.21398,
+        4.21398
+      ],
+      "eigenvalues_imag": [
+        0.0,
+        14.88464,
+        -14.88464
+      ],
+      "min_abs_arg_deg": 74.1927,
+      "frac_stability_threshold_deg": 85.5,
+      "fractionally_stable": false
+    },
+    {
+      "point": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "eigenvalues_real": [
+        -30.83587,
+        23.83587,
+        -3.0
+      ],
+      "eigenvalues_imag": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "min_abs_arg_deg": 0.0,
+      "frac_stability_threshold_deg": 85.5,
+      "fractionally_stable": false
+    },
+    {
+      "point": [
+        7.937254,
+        7.937254,
+        21.0
+      ],
+      "eigenvalues_real": [
+        -18.42796,
+        4.21398,
+        4.21398
+      ],
+      "eigenvalues_imag": [
+        0.0,
+        14.88464,
+        -14.88464
+      ],
+      "min_abs_arg_deg": 74.1927,
+      "frac_stability_threshold_deg": 85.5,
+      "fractionally_stable": false
+    }
+  ]
+}
